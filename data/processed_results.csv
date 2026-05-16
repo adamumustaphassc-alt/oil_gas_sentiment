@@ -1,0 +1,6 @@
+Report_ID,Timestamp,Facility,Technical_Report,Transformer_Sentiment,Confidence_Score,Sentiment_Clean
+101,2026-05-16 08:00,Platform Alpha,Routine maintenance completed on the main compressor. All parameters are stable and operating within normal limits.,LABEL_1,0.5075,Unknown
+102,2026-05-16 09:15,Refinery Zone B,High pressure alarm triggered on separator vessel V-101. Technicians deployed to investigate a potential blockage.,LABEL_0,0.5267,Negative / Risk
+103,2026-05-16 11:30,Pipeline Section 4,Scheduled drone inspection completed successfully. No anomalies or structural defects detected along the pipeline corridor.,LABEL_0,0.5405,Negative / Risk
+104,2026-05-16 13:45,Platform Alpha,Minor hydraulic fluid weep identified on crane assembly. Containment measures deployed; replacement parts ordered.,LABEL_0,0.5641,Negative / Risk
+105,2026-05-16 16:20,Drilling Rig 7,Critical failure reported in the primary mud pump during drilling operations. Operations halted temporarily for emergency repairs.,LABEL_0,0.7136,Negative / Risk
