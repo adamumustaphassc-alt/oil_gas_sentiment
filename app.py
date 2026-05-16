@@ -25,24 +25,26 @@ if st.button("Analyze Sentiment"):
             raw_label = result['label']
             confidence = round(result['score'] * 100, 2)
             
-            # 1. Define human-readable mapping
+            # The corrected human-readable mapping based on model behavior:
             label_mapping = {
-                "LABEL_0": "Clear / Normal Operations",
+                "LABEL_0": "Critical Risk / Facility Emergency",
                 "LABEL_1": "Minor Warning / Maintenance Needed",
-                "LABEL_2": "Critical Risk / Facility Emergency"
+                "LABEL_2": "Clear / Normal Operations"
             }
             
-            # 2. Translate the raw label safely
+            # Translate the raw label safely
             clean_label = label_mapping.get(raw_label, f"Unknown Code ({raw_label})")
             
             # Display results beautifully
             st.write("---")
             
-            # Create a green visual for clear ops, or red for risk
-            if "Clear" in clean_label:
-                st.success(f"🟢 **Status:** {clean_label}")
-            else:
+            # Updated color logic to match the corrected mapping
+            if "Critical Risk" in clean_label:
                 st.error(f"🚨 **Status:** {clean_label}")
+            elif "Minor Warning" in clean_label:
+                st.warning(f"⚠️ **Status:** {clean_label}")
+            else:
+                st.success(f"🟢 **Status:** {clean_label}")
                 
             st.metric(label="Model Confidence Level", value=f"{confidence}%")
             st.info(f"Raw Internal Model Output: `{raw_label}`")
